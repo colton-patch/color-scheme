@@ -1,7 +1,7 @@
 function Buttons() {
   return (
     <>
-      <button>dfdffddffd</button>
+      <button>Generate</button>
     </>
   );
 }
