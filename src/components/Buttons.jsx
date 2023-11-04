@@ -1,9 +1,30 @@
 function Buttons() {
   return (
     <>
-      <button>Generate</button>
+      <button onClick={() => request()}>Generate</button>
     </>
   );
+}
+
+function request() {
+  var url = "http://colormind.io/api/";
+var data = {
+	model : "default",
+	input : ["N", "N","N","N","N"]
+}
+
+var http = new XMLHttpRequest();
+
+http.onreadystatechange = function() {
+	if(http.readyState == 4 && http.status == 200) {
+		var palette = JSON.parse(http.responseText).result;
+	}
+}
+
+http.open("POST", url, true);
+http.send(JSON.stringify(data));
+
+console.log(http);
 }
 
 export default Buttons;
