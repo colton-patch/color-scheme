@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+#######################
+*.json
+*.json
+*.cjs
+node_modules/
