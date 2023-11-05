@@ -26,3 +26,14 @@ h2 {
 
 
 }
+
+.color {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  float: left;
+}
+
+.colorRow {
+  display: inline;
+}
