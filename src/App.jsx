@@ -5,18 +5,21 @@ import Buttons from "./components/Buttons.jsx";
 
 function App() {
   const [fiveColors, setFiveColors] = useState({
-    1: [120, 120, 120],
-    2: [120, 120, 120],
-    3: [120, 120, 120],
-    4: [120, 120, 120],
-    5: [120, 120, 120],
+    1: [ 169, 136, 91 ],
+    2: [ 149, 148, 66 ],
+    3: [ 126, 146, 60 ],
+    4: [ 134, 37, 19 ],
+    5:[ 23, 28, 33 ]
   });
 
   return (
-    <body>
+    <main style = {{
+      backgroundImage: `linear-gradient(to bottom, rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]}), rgb(${fiveColors[3][0]}, ${fiveColors[3][1]}, ${fiveColors[3][2]}))`,
+    }}
+    >
       <Header fiveColors={fiveColors} />
       <Buttons request={request} />
-    </body>
+    </main>
   );
 
   function request(givenColor) {
@@ -35,6 +38,7 @@ function App() {
       if (http.readyState == 4 && http.status == 200) {
         var palette = JSON.parse(http.responseText).result;
         palette = sortColors(palette);
+
         setFiveColors({
           1: palette[0],
           2: palette[1],
@@ -42,7 +46,7 @@ function App() {
           4: palette[3],
           5: palette[4],
         });
-        sortColors();
+        console.log(fiveColors);
       }
     };
 
@@ -54,7 +58,7 @@ function App() {
   function sortColors(palette) {
     for (let i=0; i<palette.length; i++) {
       let j = i;
-      while (j > 0 && average(palette[j]) > average(palette[j-1])) {
+      while (j > 0 && max(palette[j]) > max(palette[j-1])) {
         let temp = palette[j];
         palette[j] = palette[j-1];
         palette[j-1] = temp;
@@ -65,14 +69,14 @@ function App() {
     return palette;
   }
 
-  function average(colorVals) {
-    let vals = 0;
-    let total = 0;
+  function max(colorVals) {
+    let max = colorVals[0];
     for (const val of colorVals) {
-      total += val;
-      vals++;
+      if (val > max) {
+        max = val;
+      }
     }
-    return total / vals;
+    return max;
   }
   
 }

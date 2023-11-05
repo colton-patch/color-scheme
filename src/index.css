@@ -45,3 +45,7 @@ header {
   display: block;
   width: 100%;
 }
+
+main {
+  height: 100vh;
+}
