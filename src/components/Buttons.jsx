@@ -9,7 +9,7 @@ let buttonStyle = {
 
   return (
     <>
-      <button onClick={() => request(null)} style = {buttonStyle}><img src={arrows} />Random palette</button>
+      <button className='centered' onClick={() => request(null)} style = {buttonStyle}><img src={arrows} />&nbsp;Random Palette</button>
     </>
   );
 }

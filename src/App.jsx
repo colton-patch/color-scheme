@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./index.css";
 import Header from "./components/Header.jsx";
 import Buttons from "./components/Buttons.jsx";
+import ColorPicker from "./components/ColorPicker.jsx";
 
 function App() {
   const [fiveColors, setFiveColors] = useState({
@@ -19,10 +20,12 @@ function App() {
     >
       <Header fiveColors={fiveColors} />
       <Buttons request={request} fiveColors={fiveColors} />
+      <ColorPicker request={request} fiveColors={fiveColors}/>
     </main>
   );
 
   function request(givenColor) {
+    console.log(givenColor);
 
     let requestColor = (givenColor === null) ? "N" : givenColor;
 
@@ -46,7 +49,6 @@ function App() {
           4: palette[3],
           5: palette[4],
         });
-        console.log(fiveColors);
       }
     };
 
