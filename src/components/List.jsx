@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function List({fiveColors}) {
+function List({fiveColors, setFiveColors}) {
     const[favoritesList, setFavoritesList] = useState(JSON.parse(localStorage.getItem('colorOptions')) || [])
 
 
@@ -30,17 +30,6 @@ function List({fiveColors}) {
 
         localStorage.setItem('colorOptions', JSON.stringify(newFavoritesList));
 
-//        localStorage.setItem("colorOptions", )
-
-
-
-        /*
-        const favoritesList = document.getElementById('favorites');
-        var opt = document.createElement('option');
-        opt.value = colors;
-        opt.innerHTML = name;
-        favoritesList.appendChild(opt);
-        */
     };
 
     return (
@@ -49,7 +38,7 @@ function List({fiveColors}) {
 
             <select name="favorites" id="favorites" multiple>
                 {favoritesList.map((object, index) => (
-                    <option value={object.colors} key={index}>{object.name}</option>
+                    <option value={object.colors} key={index} onClick={() => setFiveColors(object.colors)}>{object.name}</option>
                 ))}
             </select>
             <div className='centerParent'>

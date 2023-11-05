@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./index.css";
 import Header from "./components/Header.jsx";
-import Buttons from "./components/Buttons.jsx";
+import Button from "./components/Button.jsx";
 import ColorPicker from "./components/ColorPicker.jsx";
 import List from "./components/List.jsx";
+import Canvas from "./components/Canvas.jsx";
 
 function App() {
   const [fiveColors, setFiveColors] = useState({
@@ -20,9 +21,22 @@ function App() {
     }}
     >
       <Header fiveColors={fiveColors} />
-      <Buttons request={request} fiveColors={fiveColors} />
-      <ColorPicker request={request} fiveColors={fiveColors}/>
-      <List fiveColors={fiveColors}/>
+      <Button request={request} fiveColors={fiveColors} />
+
+      <div className="sectionParent">
+
+      <section>
+      <ColorPicker request={request} fiveColors={fiveColors} />
+      </section>
+      
+      <section>
+      <List fiveColors={fiveColors} setFiveColors={setFiveColors} />
+      </section>
+
+      </div>
+
+      <Canvas fiveColors={fiveColors}/>
+
     </main>
   );
 
