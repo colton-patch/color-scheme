@@ -39,9 +39,16 @@ h2 {
 button {
   display: block;
   cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
 }
 
 header {
   display: block;
   width: 100%;
 }
+
+main {
+  height: 100vh;
+}
+
