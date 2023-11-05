@@ -19,11 +19,14 @@ function App() {
     </>
   );
 
-  function request() {
+  function request(givenColor) {
+
+    let requestColor = (givenColor === null) ? "N" : givenColor;
+
     var url = "http://colormind.io/api/";
     var data = {
-      model: "default",
-      input: ["N", "N", "N", "N", "N"],
+      model: "ui",
+      input: ["N", "N", requestColor, "N", "N"],
     };
 
     var http = new XMLHttpRequest();
