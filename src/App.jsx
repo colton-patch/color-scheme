@@ -3,6 +3,7 @@ import "./index.css";
 import Header from "./components/Header.jsx";
 import Buttons from "./components/Buttons.jsx";
 import ColorPicker from "./components/ColorPicker.jsx";
+import List from "./components/List.jsx";
 
 function App() {
   const [fiveColors, setFiveColors] = useState({
@@ -21,6 +22,7 @@ function App() {
       <Header fiveColors={fiveColors} />
       <Buttons request={request} fiveColors={fiveColors} />
       <ColorPicker request={request} fiveColors={fiveColors}/>
+      <List fiveColors={fiveColors}/>
     </main>
   );
 
