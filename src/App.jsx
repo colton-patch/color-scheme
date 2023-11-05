@@ -13,10 +13,10 @@ function App() {
   });
 
   return (
-    <>
+    <body>
       <Header fiveColors={fiveColors} />
       <Buttons request={request} />
-    </>
+    </body>
   );
 
   function request(givenColor) {
@@ -25,7 +25,7 @@ function App() {
 
     var url = "http://colormind.io/api/";
     var data = {
-      model: "ui",
+      model: "default",
       input: ["N", "N", requestColor, "N", "N"],
     };
 
@@ -41,13 +41,15 @@ function App() {
           color4: palette[3],
           color5: palette[4],
         });
-        console.log(fiveColors);
       }
     };
 
     http.open("POST", url, true);
     http.send(JSON.stringify(data));
+
   }
+
+  
 }
 
 export default App;
