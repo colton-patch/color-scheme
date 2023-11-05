@@ -8,6 +8,7 @@ class ColorPicker extends React.Component {
 
   state = {
     background: "rgb",
+    backgroundColor: "#141414",
   };
 
   handleChangeComplete = (color) => {
@@ -28,18 +29,22 @@ class ColorPicker extends React.Component {
 
     return (
       <>
-        <SketchPicker
-          color={this.state.background}
-          onChangeComplete={this.handleChangeComplete}
-        />
-        <button
-          onClick={() =>
-            this.props.request(this.parseRgb(this.state.background))
-          }
-          style={buttonStyle} className="centered"
-        >
-          Palette from Color
-        </button>
+        <div className="sketch">
+          <SketchPicker
+            color={this.state.background}
+            onChangeComplete={this.handleChangeComplete}
+          />
+        </div>
+        <div className="centerParent">
+          <button
+            onClick={() =>
+              this.props.request(this.parseRgb(this.state.background))
+            }
+            style={buttonStyle}
+          >
+            Palette from Color
+          </button>
+        </div>
       </>
     );
   }
