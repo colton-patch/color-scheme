@@ -29,6 +29,10 @@ function App() {
 
       <div className="sectionParent">
         <section>
+          <Canvas fiveColors={fiveColors} />
+        </section>
+
+        <section>
           <ColorPicker request={request} fiveColors={fiveColors} />
         </section>
 
@@ -36,8 +40,8 @@ function App() {
           <List fiveColors={fiveColors} setFiveColors={setFiveColors} />
         </section>
       </div>
-
-      <Canvas fiveColors={fiveColors} />
+      <p></p>
+      <p></p>
     </main>
   );
 
