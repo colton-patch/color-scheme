@@ -1,22 +1,24 @@
 function Header({ fiveColors }) {
+  console.log(fiveColors);
+
   let color1 = {
-    backgroundColor: `rgb(${fiveColors.color1[0]}, ${fiveColors.color1[1]}, ${fiveColors.color1[2]}`,
+    backgroundColor: `rgb(${fiveColors[1][0]}, ${fiveColors[1][1]}, ${fiveColors[1][2]}`,
   };
 
   let color2 = {
-    backgroundColor: `rgb(${fiveColors.color2[0]}, ${fiveColors.color2[1]}, ${fiveColors.color2[2]}`,
+    backgroundColor: `rgb(${fiveColors[2][0]}, ${fiveColors[2][1]}, ${fiveColors[2][2]}`,
   };
 
   let color3 = {
-    backgroundColor: `rgb(${fiveColors.color3[0]}, ${fiveColors.color3[1]}, ${fiveColors.color3[2]}`,
+    backgroundColor: `rgb(${fiveColors[3][0]}, ${fiveColors[3][1]}, ${fiveColors[3][2]}`,
   };
 
   let color4 = {
-    backgroundColor: `rgb(${fiveColors.color4[0]}, ${fiveColors.color4[1]}, ${fiveColors.color4[2]}`,
+    backgroundColor: `rgb(${fiveColors[4][0]}, ${fiveColors[4][1]}, ${fiveColors[4][2]}`,
   };
 
   let color5 = {
-    backgroundColor: `rgb(${fiveColors.color5[0]}, ${fiveColors.color5[1]}, ${fiveColors.color5[2]}`,
+    backgroundColor: `rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]}`,
   };
 
   return (
