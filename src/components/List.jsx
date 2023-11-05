@@ -36,6 +36,7 @@ function List({ fiveColors, setFiveColors }) {
     console.log(name);
     const removeList = favoritesList.filter(object => object.name !== name);
     setFavoritesList(removeList);
+    localStorage.setItem("colorOptions", JSON.stringify(removeList));
   }
 
   return (

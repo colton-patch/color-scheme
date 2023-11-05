@@ -12,7 +12,7 @@ const Canvas = ({ fiveColors }) => {
   const styles = {
     border: "1rem solid #9c9c9c",
     borderRadius: "2",
-    height: '6rem',
+    height: '20rem',
   };
 
   return (
@@ -35,11 +35,11 @@ const Canvas = ({ fiveColors }) => {
         ))}
       </div>
       <div className="canvasArea">
-        <div width="3rem" height="50rem">
+        <div width="3rem">
           <ReactSketchCanvas
             strokeColor={`rgb(${currentColor[0]}, ${currentColor[1]}, ${currentColor[2]})`}
             strokeWidth={20}
-            width="85%"
+            width="95%"
             display="flex"
             style={styles}
           />
