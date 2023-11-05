@@ -28,9 +28,9 @@ h2 {
 }
 
 .color {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.3rem;
   float: left;
 }
 
@@ -43,9 +43,5 @@ h2 {
 }
 
 button {
-  display: block;
-}
-
-.header {
   display: block;
 }
