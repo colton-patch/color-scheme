@@ -5,11 +5,11 @@ import Buttons from "./components/Buttons.jsx";
 
 function App() {
   const [fiveColors, setFiveColors] = useState({
-    color1: [120, 120, 120],
-    color2: [120, 120, 120],
-    color3: [120, 120, 120],
-    color4: [120, 120, 120],
-    color5: [120, 120, 120],
+    1: [120, 120, 120],
+    2: [120, 120, 120],
+    3: [120, 120, 120],
+    4: [120, 120, 120],
+    5: [120, 120, 120],
   });
 
   return (
@@ -34,13 +34,15 @@ function App() {
     http.onreadystatechange = function () {
       if (http.readyState == 4 && http.status == 200) {
         var palette = JSON.parse(http.responseText).result;
+        palette = sortColors(palette);
         setFiveColors({
-          color1: palette[0],
-          color2: palette[1],
-          color3: palette[2],
-          color4: palette[3],
-          color5: palette[4],
+          1: palette[0],
+          2: palette[1],
+          3: palette[2],
+          4: palette[3],
+          5: palette[4],
         });
+        sortColors();
       }
     };
 
@@ -49,6 +51,29 @@ function App() {
 
   }
 
+  function sortColors(palette) {
+    for (let i=0; i<palette.length; i++) {
+      let j = i;
+      while (j > 0 && average(palette[j]) > average(palette[j-1])) {
+        let temp = palette[j];
+        palette[j] = palette[j-1];
+        palette[j-1] = temp;
+        j--
+      }
+    }
+    
+    return palette;
+  }
+
+  function average(colorVals) {
+    let vals = 0;
+    let total = 0;
+    for (const val of colorVals) {
+      total += val;
+      vals++;
+    }
+    return total / vals;
+  }
   
 }
 
