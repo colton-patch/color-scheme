@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./index.css";
 import Header from "./components/Header.jsx";
 import Buttons from "./components/Buttons.jsx";
+import ColorPicker from "./components/ColorPicker.jsx";
 
 function App() {
   const [fiveColors, setFiveColors] = useState({
@@ -17,8 +18,9 @@ function App() {
       backgroundImage: `linear-gradient(to bottom, rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]}), rgb(${fiveColors[3][0]}, ${fiveColors[3][1]}, ${fiveColors[3][2]}))`,
     }}
     >
-      <Header fiveColors={fiveColors} />
-      <Buttons request={request} fiveColors={fiveColors} />
+      <Header fiveColors={fiveColors} />;
+      <Buttons request={request} fiveColors={fiveColors} />;
+      <ColorPicker />;
     </main>
   );
 
