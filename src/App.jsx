@@ -18,7 +18,7 @@ function App() {
     }}
     >
       <Header fiveColors={fiveColors} />
-      <Buttons request={request} />
+      <Buttons request={request} fiveColors={fiveColors} />
     </main>
   );
 
