@@ -1,6 +1,4 @@
 function Header({ fiveColors }) {
-  console.log(fiveColors);
-
   let color1 = {
     backgroundColor: `rgb(${fiveColors[1][0]}, ${fiveColors[1][1]}, ${fiveColors[1][2]}`,
   };
@@ -21,10 +19,14 @@ function Header({ fiveColors }) {
     backgroundColor: `rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]}`,
   };
 
+  let headerStyle = {
+    color: `rgb(${fiveColors[1][0]}, ${fiveColors[1][1]}, ${fiveColors[1][2]}`
+  };
+
   return (
     <header>
-      <h1>Color Scheme for Artists</h1>
-      <h2>Generate a color palette</h2>
+      <h1 style = {headerStyle}>Color Scheme for Artists</h1>
+      <h2 style = {headerStyle}>Generate a color palette</h2>
 
       <div className="colorRow">
         <div className="color" style={color1} />
