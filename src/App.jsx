@@ -49,7 +49,6 @@ function App() {
           4: palette[3],
           5: palette[4],
         });
-        console.log(fiveColors);
       }
     };
 
