@@ -50,6 +50,16 @@ h2 {
   justify-content: center;
 }
 
+
+
+.canvasArea {
+  justify-content: center;
+  border: none;
+}
+
+
+
+
 button {
   cursor: pointer;
   border-radius: 0.5rem;
