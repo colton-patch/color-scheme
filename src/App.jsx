@@ -18,6 +18,8 @@ function App() {
     }
   );
 
+  console.log(fiveColors);
+
   return (
     <main
       style={{
@@ -40,7 +42,6 @@ function App() {
           <List fiveColors={fiveColors} setFiveColors={setFiveColors} />
         </section>
       </div>
-      <p></p>
       <p></p>
     </main>
   );
@@ -107,7 +108,7 @@ function App() {
     } else {
       localStorage.setItem(
         "currentColor",
-        JSON.stringify([[169, 136, 91], [149, 148, 66], [126, 146, 60], [134, 37, 19], [23, 28, 33]])
+        JSON.stringify([[216, 212, 183], [185, 17, 17], [70, 128, 95], [83, 88, 69], [12, 18, 16]])
       );
       return true;
     }
