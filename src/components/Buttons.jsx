@@ -8,9 +8,9 @@ let buttonStyle = {
 }
 
   return (
-    <>
+    <div className='centerParent'>
       <button className='centered' onClick={() => request(null)} style = {buttonStyle}><img src={arrows} />&nbsp;Random Palette</button>
-    </>
+    </div>
   );
 }
 
