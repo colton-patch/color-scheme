@@ -27,21 +27,23 @@ function Header({fiveColors}) {
 
   return (
     <>
-      <h1>Color Scheme for Artists</h1>
-      <h2>Generate a color palette</h2>
+      <div className="header">
+        <h1>Color Scheme for Artists</h1>
+        <h2>Generate a color palette</h2>
 
-      <div className="colorRow" style = {{align : 'center'}}>
+        <div className="colorRow">
 
-        <div className="color" style = {color1} />
+          <div className="color" style = {color1} />
 
-        <div className="color" style = {color2}/>
+          <div className="color" style = {color2}/>
 
-        <div className="color" style = {color3}/>
+          <div className="color" style = {color3}/>
 
-        <div className="color" style = {color4}/>
+          <div className="color" style = {color4}/>
 
-        <div className="color" style = {color5}/>
+          <div className="color" style = {color5}/>
 
+        </div>
       </div>
     </>
   );
