@@ -18,13 +18,14 @@ function App() {
       backgroundImage: `linear-gradient(to bottom, rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]}), rgb(${fiveColors[3][0]}, ${fiveColors[3][1]}, ${fiveColors[3][2]}))`,
     }}
     >
-      <Header fiveColors={fiveColors} />;
-      <Buttons request={request} fiveColors={fiveColors} />;
-      <ColorPicker />;
+      <Header fiveColors={fiveColors} />
+      <Buttons request={request} fiveColors={fiveColors} />
+      <ColorPicker request={request}/>
     </main>
   );
 
   function request(givenColor) {
+    console.log(givenColor);
 
     let requestColor = (givenColor === null) ? "N" : givenColor;
 
