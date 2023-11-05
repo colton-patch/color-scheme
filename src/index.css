@@ -100,3 +100,12 @@ img {
   padding-top: 0.2rem;
   vertical-align: text-bottom;
 }
+
+.sectionParent {
+  display: inline-flex;
+  width: 100%;
+}
+
+section {
+  width: 50%;
+}
