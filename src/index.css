@@ -35,5 +35,17 @@ h2 {
 }
 
 .colorRow {
-  display: inline;
+  display: block;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+  align-self: center;
+}
+
+button {
+  display: block;
+}
+
+.header {
+  display: block;
 }
