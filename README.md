@@ -1,2 +1,3 @@
-# color-scheme
- A website that generates color schemes for the user, either randomly or with a given color.  It then changes the look of the website according to the color scheme, allows the user to save favorite color schemes, and allows the user to draw using the color scheme
+# Color Scheme
+
+A website developed with React that allows artists and graphic designers to generate a color palette. They can either generate a completely random palette or generate one which includes a chosen color. It also allows users to save favorite color palettes and view them again, as well as draw using the generated color palette.
