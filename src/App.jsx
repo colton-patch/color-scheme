@@ -143,10 +143,6 @@ function request(givenColor) {
     return `rgb(${red},${green},${blue})`;
   }
 
-
-
-  
-
   function sortColors(palette) {
     for (let i = 0; i < palette.length; i++) {
       let j = i;
@@ -179,7 +175,7 @@ function request(givenColor) {
         "currentColor",
         JSON.stringify(['rgb(216, 212, 183)', 'rgb(185, 17, 17)', 'rgb(70, 128, 95)', 'rgb(83, 88, 69)', 'rgb(12, 18, 16)'])
       );
-      return true;
+      return null;
     }
   }
 }
