@@ -6,13 +6,13 @@ function List({ fiveColors, setFiveColors }) {
   );
 
   let textColor2 = {
-    color: `rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]}`,
+    color: `${fiveColors[5]}`,
   };
 
   let buttonStyle = {
-    backgroundColor: `rgb(${fiveColors[1][0]}, ${fiveColors[1][1]}, ${fiveColors[1][2]})`,
-    border: `2px solid rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]})`,
-    color: `rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]})`,
+    backgroundColor: `${fiveColors[1]}`,
+    border: `2px solid ${fiveColors[5]}`,
+    color: `${fiveColors[5]}`,
   };
 
   function addToFavorites(colors, name) {
