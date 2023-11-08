@@ -30,11 +30,11 @@ function List({ fiveColors, setFiveColors }) {
     setFavoritesList(newFavoritesList);
 
     localStorage.setItem("colorOptions", JSON.stringify(newFavoritesList));
-  };
+  }
 
   function removeFromFavorites(name) {
     console.log(name);
-    const removeList = favoritesList.filter(object => object.name !== name);
+    const removeList = favoritesList.filter((object) => object.name !== name);
     setFavoritesList(removeList);
     localStorage.setItem("colorOptions", JSON.stringify(removeList));
   }
@@ -42,7 +42,6 @@ function List({ fiveColors, setFiveColors }) {
   return (
     <>
       <p style={textColor2}>Favorites</p>
-
       <select name="favorites" id="favorites" multiple>
         {favoritesList.map((object, index) => (
           <option
@@ -84,15 +83,18 @@ function List({ fiveColors, setFiveColors }) {
           New palette name
         </label>
         <input type="text" id="favoriteName"></input>
-
-
-
-
         <label style={textColor2} className="helvet" htmlFor="removeName">
           Remove existing palette
         </label>
         <input type="text" id="removeName"></input>
-        <button style={buttonStyle} onClick={() => removeFromFavorites(document.getElementById('removeName').value)}>Remove from favorites</button>
+        <button
+          style={buttonStyle}
+          onClick={() =>
+            removeFromFavorites(document.getElementById("removeName").value)
+          }
+        >
+          Remove from favorites
+        </button>
       </div>
     </>
   );

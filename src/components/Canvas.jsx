@@ -13,7 +13,7 @@ const Canvas = ({ fiveColors }) => {
   const styles = {
     border: "1rem solid #9c9c9c",
     borderRadius: "2",
-    height: '20rem',
+    height: "20rem",
   };
 
   return (

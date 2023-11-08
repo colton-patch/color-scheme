@@ -44,49 +44,14 @@ function App() {
     </main>
   );
 
-
-  /*
   function request(givenColor) {
-    let requestColor = givenColor === null ? "N" : givenColor;
-
-    var url = "http://colormind.io/api/";
-    var data = {
-      model: "default",
-      input: ["N", "N", requestColor, "N", "N"],
-    };
-
-    var http = new XMLHttpRequest();
-
-    http.onreadystatechange = function () {
-      if (http.readyState == 4 && http.status == 200) {
-        var palette = JSON.parse(http.responseText).result;
-        palette = sortColors(palette);
-
-        localStorage.setItem("currentColor", JSON.stringify(palette));
-
-        setFiveColors({
-          1: palette[0],
-          2: palette[1],
-          3: palette[2],
-          4: palette[3],
-          5: palette[4],
-        });
-      }
-    };
-
-    http.open("POST", url, true);
-    http.send(JSON.stringify(data));
-  }*/
-
-
-  
-function request(givenColor) {
-    const seedRGBColor = (givenColor) ? `rgb(${givenColor[0]},${givenColor[1]},${givenColor[2]})` : generateRandomRGBColor();
+    const seedRGBColor = givenColor
+      ? `rgb(${givenColor[0]},${givenColor[1]},${givenColor[2]})`
+      : generateRandomRGBColor();
 
     const url = `https://www.thecolorapi.com/scheme?rgb=${seedRGBColor}&mode=triad&count=5`;
 
-
-  /*
+    /*
   different themes for mode in url
 
   monochrome: Generates a monochromatic color scheme based on the seed color.
@@ -104,9 +69,7 @@ function request(givenColor) {
   triad: Generates a triadic color scheme.
 
   quad: Generates a tetradic (four-color) color scheme.
-  */  
-
-
+  */
 
     fetch(url)
       .then((response) => {
@@ -135,36 +98,12 @@ function request(givenColor) {
   function getRandomRGBValue() {
     return Math.floor(Math.random() * 256);
   }
-  
+
   function generateRandomRGBColor() {
     const red = getRandomRGBValue();
     const green = getRandomRGBValue();
     const blue = getRandomRGBValue();
     return `rgb(${red},${green},${blue})`;
-  }
-
-  function sortColors(palette) {
-    for (let i = 0; i < palette.length; i++) {
-      let j = i;
-      while (j > 0 && max(palette[j]) > max(palette[j - 1])) {
-        let temp = palette[j];
-        palette[j] = palette[j - 1];
-        palette[j - 1] = temp;
-        j--;
-      }
-    }
-
-    return palette;
-  }
-
-  function max(colorVals) {
-    let max = colorVals[0];
-    for (const val of colorVals) {
-      if (val > max) {
-        max = val;
-      }
-    }
-    return max;
   }
 
   function startUpColors() {
@@ -173,7 +112,13 @@ function request(givenColor) {
     } else {
       localStorage.setItem(
         "currentColor",
-        JSON.stringify(['rgb(216, 212, 183)', 'rgb(185, 17, 17)', 'rgb(70, 128, 95)', 'rgb(83, 88, 69)', 'rgb(12, 18, 16)'])
+        JSON.stringify([
+          "rgb(216, 212, 183)",
+          "rgb(185, 17, 17)",
+          "rgb(70, 128, 95)",
+          "rgb(83, 88, 69)",
+          "rgb(12, 18, 16)",
+        ])
       );
       return null;
     }
