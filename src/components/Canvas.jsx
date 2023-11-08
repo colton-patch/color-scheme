@@ -3,6 +3,7 @@ import { ReactSketchCanvas } from "react-sketch-canvas";
 
 const Canvas = ({ fiveColors }) => {
   const colorArray = Object.values(fiveColors);
+
   const [currentColor, setCurrentColor] = useState(colorArray[0]);
 
   const handleColorChange = (color) => {
@@ -22,7 +23,7 @@ const Canvas = ({ fiveColors }) => {
           <div
             key={index}
             style={{
-              backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})`,
+              backgroundColor: `${color}`,
               width: "2rem",
               height: "2rem",
               border: "1px solid #ccc",
@@ -37,7 +38,7 @@ const Canvas = ({ fiveColors }) => {
       <div className="canvasArea">
         <div width="3rem">
           <ReactSketchCanvas
-            strokeColor={`rgb(${currentColor[0]}, ${currentColor[1]}, ${currentColor[2]})`}
+            strokeColor={`${currentColor}`}
             strokeWidth={20}
             width="95%"
             display="flex"

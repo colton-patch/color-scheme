@@ -18,12 +18,10 @@ function App() {
     }
   );
 
-  console.log(fiveColors);
-
   return (
     <main
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]}), rgb(${fiveColors[3][0]}, ${fiveColors[3][1]}, ${fiveColors[3][2]}))`,
+        backgroundImage: `linear-gradient(to bottom, ${fiveColors[5]}, ${fiveColors[3]})`,
       }}
     >
       <Header fiveColors={fiveColors} />
@@ -46,6 +44,8 @@ function App() {
     </main>
   );
 
+
+  /*
   function request(givenColor) {
     let requestColor = givenColor === null ? "N" : givenColor;
 
@@ -76,7 +76,76 @@ function App() {
 
     http.open("POST", url, true);
     http.send(JSON.stringify(data));
+  }*/
+
+
+  
+function request(givenColor) {
+    const seedRGBColor = (givenColor) ? `rgb(${givenColor[0]},${givenColor[1]},${givenColor[2]})` : generateRandomRGBColor();
+
+    const url = `https://www.thecolorapi.com/scheme?rgb=${seedRGBColor}&mode=triad&count=5`;
+
+
+  /*
+  different themes for mode in url
+
+  monochrome: Generates a monochromatic color scheme based on the seed color.
+
+  monochrome-dark: Generates a monochromatic color scheme with darker shades.
+
+  monochrome-light: Generates a monochromatic color scheme with lighter shades.
+
+  analogic: Generates an analogous color scheme based on the seed color.
+
+  complement: Generates a color scheme with complementary colors.
+
+  analogic-complement: Combines an analogous and a complementary color scheme.
+
+  triad: Generates a triadic color scheme.
+
+  quad: Generates a tetradic (four-color) color scheme.
+  */  
+
+
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const colors = data.colors.map((color) => color.rgb.value);
+        console.log(colors);
+
+        localStorage.setItem("currentColor", JSON.stringify(colors));
+
+        setFiveColors({
+          1: colors[5],
+          2: colors[4],
+          3: colors[3],
+          4: colors[2],
+          5: colors[1],
+        });
+      })
+      .catch((error) => console.error("Error fetching color scheme:", error));
   }
+
+  function getRandomRGBValue() {
+    return Math.floor(Math.random() * 256);
+  }
+  
+  function generateRandomRGBColor() {
+    const red = getRandomRGBValue();
+    const green = getRandomRGBValue();
+    const blue = getRandomRGBValue();
+    return `rgb(${red},${green},${blue})`;
+  }
+
+
+
+  
 
   function sortColors(palette) {
     for (let i = 0; i < palette.length; i++) {
@@ -108,7 +177,7 @@ function App() {
     } else {
       localStorage.setItem(
         "currentColor",
-        JSON.stringify([[216, 212, 183], [185, 17, 17], [70, 128, 95], [83, 88, 69], [12, 18, 16]])
+        JSON.stringify(['rgb(216, 212, 183)', 'rgb(185, 17, 17)', 'rgb(70, 128, 95)', 'rgb(83, 88, 69)', 'rgb(12, 18, 16)'])
       );
       return true;
     }

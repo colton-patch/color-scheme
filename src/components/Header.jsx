@@ -1,26 +1,26 @@
 function Header({ fiveColors }) {
   let color1 = {
-    backgroundColor: `rgb(${fiveColors[1][0]}, ${fiveColors[1][1]}, ${fiveColors[1][2]}`,
+    backgroundColor: `${fiveColors[1]}`,
   };
 
   let color2 = {
-    backgroundColor: `rgb(${fiveColors[2][0]}, ${fiveColors[2][1]}, ${fiveColors[2][2]}`,
+    backgroundColor: `${fiveColors[2]}`,
   };
 
   let color3 = {
-    backgroundColor: `rgb(${fiveColors[3][0]}, ${fiveColors[3][1]}, ${fiveColors[3][2]}`,
+    backgroundColor: `${fiveColors[3]}`,
   };
 
   let color4 = {
-    backgroundColor: `rgb(${fiveColors[4][0]}, ${fiveColors[4][1]}, ${fiveColors[4][2]}`,
+    backgroundColor: `${fiveColors[4]}`,
   };
 
   let color5 = {
-    backgroundColor: `rgb(${fiveColors[5][0]}, ${fiveColors[5][1]}, ${fiveColors[5][2]}`,
+    backgroundColor: `${fiveColors[5]}`,
   };
 
   let headerStyle = {
-    color: `rgb(${fiveColors[1][0]}, ${fiveColors[1][1]}, ${fiveColors[1][2]}`
+    color: `${fiveColors[1]}`
   };
 
   return (
