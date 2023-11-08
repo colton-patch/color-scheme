@@ -49,27 +49,27 @@ function App() {
       ? `rgb(${givenColor[0]},${givenColor[1]},${givenColor[2]})`
       : generateRandomRGBColor();
 
-    const url = `https://www.thecolorapi.com/scheme?rgb=${seedRGBColor}&mode=triad&count=5`;
+    const url = `https://www.thecolorapi.com/scheme?rgb=${seedRGBColor}&mode=analogic-complement&count=5`;
 
     /*
-  different themes for mode in url
+    different themes for mode in url
 
-  monochrome: Generates a monochromatic color scheme based on the seed color.
+    monochrome: Generates a monochromatic color scheme based on the seed color.
 
-  monochrome-dark: Generates a monochromatic color scheme with darker shades.
+    monochrome-dark: Generates a monochromatic color scheme with darker shades.
 
-  monochrome-light: Generates a monochromatic color scheme with lighter shades.
+    monochrome-light: Generates a monochromatic color scheme with lighter shades.
 
-  analogic: Generates an analogous color scheme based on the seed color.
+    analogic: Generates an analogous color scheme based on the seed color.
 
-  complement: Generates a color scheme with complementary colors.
+    complement: Generates a color scheme with complementary colors.
 
-  analogic-complement: Combines an analogous and a complementary color scheme.
+    analogic-complement: Combines an analogous and a complementary color scheme.
 
-  triad: Generates a triadic color scheme.
+    triad: Generates a triadic color scheme.
 
-  quad: Generates a tetradic (four-color) color scheme.
-  */
+    quad: Generates a tetradic (four-color) color scheme.
+    */
 
     fetch(url)
       .then((response) => {
@@ -80,17 +80,18 @@ function App() {
       })
       .then((data) => {
         const colors = data.colors.map((color) => color.rgb.value);
-        console.log(colors);
 
         localStorage.setItem("currentColor", JSON.stringify(colors));
 
         setFiveColors({
-          1: colors[5],
-          2: colors[4],
-          3: colors[3],
-          4: colors[2],
-          5: colors[1],
+          1: colors[4],
+          2: colors[3],
+          3: colors[2],
+          4: colors[1],
+          5: colors[0],
         });
+
+        console.log(colors);
       })
       .catch((error) => console.error("Error fetching color scheme:", error));
   }
