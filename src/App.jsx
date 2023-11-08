@@ -79,16 +79,20 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        const colors = data.colors.map((color) => color.rgb.value);
+        let colors = data.colors.map((color) => color.rgb.value);
+        
+        console.log(colors);
+
+        colors.reverse();
 
         localStorage.setItem("currentColor", JSON.stringify(colors));
 
         setFiveColors({
-          1: colors[4],
-          2: colors[3],
+          1: colors[0],
+          2: colors[1],
           3: colors[2],
-          4: colors[1],
-          5: colors[0],
+          4: colors[3],
+          5: colors[4],
         });
 
         console.log(colors);
