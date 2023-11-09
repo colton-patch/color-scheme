@@ -17,6 +17,7 @@ function App() {
       5: JSON.parse(localStorage.getItem("currentColor"))[4],
     }
   );
+  const [paletteType, setPaletteType] = useState(checkForSelectedPalette() || localStorage.getItem("selectedPalette"));
 
   return (
     <main
@@ -25,7 +26,7 @@ function App() {
       }}
     >
       <Header fiveColors={fiveColors} />
-      <Button request={request} fiveColors={fiveColors} />
+      <Button request={request} fiveColors={fiveColors} paletteType={paletteType} setPaletteType={setPaletteType} />
 
       <div className="sectionParent">
         <section>
@@ -49,7 +50,7 @@ function App() {
       ? `rgb(${givenColor[0]},${givenColor[1]},${givenColor[2]})`
       : generateRandomRGBColor();
 
-    const url = `https://www.thecolorapi.com/scheme?rgb=${seedRGBColor}&mode=analogic-complement&count=5`;
+    const url = `https://www.thecolorapi.com/scheme?rgb=${seedRGBColor}&mode=${paletteType}&count=5`;
 
     /*
     different themes for mode in url
@@ -128,6 +129,13 @@ function App() {
       return null;
     }
   }
+}
+
+function checkForSelectedPalette() {
+  if (!localStorage.getItem("selectedPalette")) {
+    localStorage.setItem("selectedPalette", "monochrome")
+    return null;
+  }; 
 }
 
 export default App;
