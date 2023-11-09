@@ -25,7 +25,7 @@ function Header({ fiveColors }) {
 
   return (
     <header>
-      <h1 style = {headerStyle}>Color Scheme for Artists</h1>
+      <h1 style = {headerStyle} className="rotate">Color Scheme for Artists</h1>
       <h2 style = {headerStyle}>Generate a color palette</h2>
 
       <div className="colorRow">
