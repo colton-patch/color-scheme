@@ -17,6 +17,16 @@ function Button({ request, fiveColors }) {
         <img src={arrows} />
         &nbsp;Random Palette
       </button>
+      <select id="fruit" name="fruit">
+        <option value="monochrome">Monochrome</option>
+        <option value="monochrome-dark">Monochrome-Dark</option>
+        <option value="monochrome-light">Monochrome-Light</option>
+        <option value="analogic">Analogic</option>
+        <option value="complement">Complement</option>
+        <option value="analogic-complement">Analogic-Complement</option>
+        <option value="triad">Triad</option>
+        <option value="quad">Quad</option>
+      </select>
     </div>
   );
 }
