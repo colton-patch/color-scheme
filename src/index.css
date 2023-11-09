@@ -2,7 +2,18 @@
   margin: 0;
 }
 
+/*////////////////*/
 /* Element styles */
+/*////////////////*/
+
+button {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  margin-left: auto;
+  text-align: center;
+}
 
 h1 {
   font-size: 2.6em;
@@ -20,7 +31,69 @@ h2 {
   margin-bottom: 1rem;
 }
 
+header {
+  display: block;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+
+img {
+  height: 1.2rem;
+  padding-top: 0.2rem;
+  vertical-align: text-bottom;
+}
+
+input {
+  display: flex;
+  border-radius: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  float: center;
+}
+
+main {
+  height: 100vh;
+  overflow: hidden;
+}
+
+p {
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+section {
+  width: 50%;
+}
+
+select {
+  width: 10rem;
+  display: flex;
+  border-radius: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  margin: auto;
+}
+
+/*//////////////*/
 /* Class styles */
+/*//////////////*/
+
+.canvasArea {
+  justify-content: center;
+  border: none;
+}
+
+
+.centerParent {
+  text-align: center;
+  justify-content: center;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
 
 .color {
   width: 6rem;
@@ -36,81 +109,15 @@ h2 {
   text-align: center;
 }
 
-.centerParent {
-  text-align: center;
-  justify-content: center;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-}
-
 .helvet {
   font-size: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
-.sketch {
-  display: flex;
-  justify-content: center;
-}
-
-
-
-.canvasArea {
-  justify-content: center;
-  border: none;
-}
-
-main {
-  height: 100vh;
-  overflow: hidden;
-}
-
-button {
-  cursor: pointer;
-  border-radius: 0.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  margin-left: auto;
-  text-align: center;
-}
-
-header {
-  display: block;
-  width: 100%;
-  margin-bottom: 5vh;
-}
-
-p {
-  font-size: 1.2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-
-select {
-  width: 10rem;
-  display: flex;
-  border-radius: 0.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  margin: auto;
-}
-
-input {
-  display: flex;
-  border-radius: 0.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-  margin: auto;
-  text-align: center;
-  justify-content: center;
-  float: center;
-}
-
-img {
-  height: 1.2rem;
-  padding-top: 0.2rem;
-  vertical-align: text-bottom;
+.rotate {
+  animation: rotateUpDown 3s infinite linear;
+  display: inline-block;
+  transform-origin: center;
 }
 
 .sectionParent {
@@ -118,9 +125,14 @@ img {
   width: 100%;
 }
 
-section {
-  width: 50%;
+.sketch {
+  display: flex;
+  justify-content: center;
 }
+
+/*////////////*/
+/* Animations */
+/*////////////*/
 
 @keyframes rotateUpDown {
   0% { transform: rotate(0deg); }
@@ -128,9 +140,4 @@ section {
   50% { transform: rotate(0deg); }
   75% { transform: rotate(1.5deg); }
   100% { transform: rotate(0deg); }
-}
-.rotate {
-  animation: rotateUpDown 3s infinite linear;
-  display: inline-block;
-  transform-origin: center;
 }

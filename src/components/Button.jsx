@@ -11,6 +11,13 @@ function Button({ request, fiveColors, paletteType, setPaletteType }) {
     color: `${fiveColors[1]}`,
   };
 
+  let selectStyle = {
+    color: `${fiveColors[5]}`,
+    backgroundColor: `${fiveColors[1]}`,
+    border: `2px solid ${fiveColors[5]}`,
+    width: '13.5rem'
+  }
+
   function handleSelectChange(event) {
     const selected = event.target.value;
     setPaletteType(selected);
@@ -28,7 +35,7 @@ function Button({ request, fiveColors, paletteType, setPaletteType }) {
         &nbsp;Random Palette
       </button>
       <p style={pStyle}>Palette Type</p>
-      <select id="paletteValue" name="paletteValue" value={paletteType} onChange={handleSelectChange} >
+      <select id="paletteValue" name="paletteValue" value={paletteType} onChange={handleSelectChange} style={selectStyle} >
         <option value="monochrome">Monochrome</option>
         <option value="monochrome-dark">Monochrome-Dark</option>
         <option value="monochrome-light">Monochrome-Light</option>
