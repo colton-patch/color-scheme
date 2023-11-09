@@ -1,11 +1,21 @@
 import arrows from "../img/arrows.svg";
 
-function Button({ request, fiveColors }) {
+function Button({ request, fiveColors, paletteType, setPaletteType }) {
   let buttonStyle = {
     backgroundColor: `${fiveColors[1]}`,
     border: `2px solid ${fiveColors[5]}`,
     color: `${fiveColors[5]}`,
   };
+
+  let pStyle = {
+    color: `${fiveColors[1]}`,
+  };
+
+  function handleSelectChange(event) {
+    const selected = event.target.value;
+    setPaletteType(selected);
+    localStorage.setItem("selectedPalette", selected);
+  }
 
   return (
     <div className="centerParent">
@@ -17,7 +27,8 @@ function Button({ request, fiveColors }) {
         <img src={arrows} />
         &nbsp;Random Palette
       </button>
-      <select id="fruit" name="fruit">
+      <p style={pStyle}>Palette Type</p>
+      <select id="paletteValue" name="paletteValue" value={paletteType} onChange={handleSelectChange} >
         <option value="monochrome">Monochrome</option>
         <option value="monochrome-dark">Monochrome-Dark</option>
         <option value="monochrome-light">Monochrome-Light</option>
@@ -30,5 +41,6 @@ function Button({ request, fiveColors }) {
     </div>
   );
 }
+
 
 export default Button;
